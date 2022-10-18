@@ -16,7 +16,7 @@ public class Questao04 {
         int horasTrab = entrada.nextInt();
         double salario = valorHora * horasTrab;
         
-        System.out.printf(nome + " ira receber R$%.2f", salario, " de salario.");
+        System.out.printf(nome + " ira receber R$%.2f de salario.", salario);
         		
 		entrada.close();
 	}

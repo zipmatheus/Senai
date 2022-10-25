@@ -10,9 +10,9 @@ public class Questao03 {
 		
 		Scanner entrada = new Scanner(System.in);
 		
-		System.out.println("Digite o primeiro numero: ");
+		System.out.println("Digite o primeiro numero:");
         int num1 = entrada.nextInt();
-        System.out.println("Digite o segundo numero: ");
+        System.out.println("Digite o segundo numero:");
         int num2 = entrada.nextInt();
 
         if (num1 < num2) {
@@ -25,7 +25,11 @@ public class Questao03 {
                 System.out.println(i);
             }           
         } else {
-            System.out.println("Os números digitados são iguais.");
+            System.out.println("Os numeros digitados sao iguais.");
+         
+         // Outra alternativa de laco   
+        //for (int i = n1; i <= n2; i++)
+        //    System.out.println(i);
             
          entrada.close();    
         }

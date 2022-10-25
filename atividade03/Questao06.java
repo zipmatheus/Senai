@@ -10,13 +10,13 @@ public class Questao06 {
 		
 		Scanner entrada = new Scanner(System.in);
 		
-	    int num, maior = 0, menor = 100, media = 0, soma = 0;
+	    int maior = 0, menor = 100, media = 0, soma = 0;
 	    int contMaior = 0, contMenor = 0, i;
 	    
 	    for(i = 0; i < 5; i++){
 	        System.out.println("Digite um numero:");
-	        num = entrada.nextInt();
-	        
+	        int num = entrada.nextInt();
+	        	        
 	        if( (num < 1) || (num > 100) ){
 	            i = i - 1;
 	        } else{
@@ -41,7 +41,6 @@ public class Questao06 {
 	    System.out.println("A media foi " + (media = soma / i));
 	    
 	    entrada.close();
-
 	    }
 
 	}

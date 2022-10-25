@@ -10,19 +10,23 @@ public class Questao04 {
 		 se igual "Palavra Ok" a pessoa pode faze no máximo 5 tentativas de acertar a palavra.*/
 		 
 		Scanner entrada = new Scanner(System.in);
-		
-
-	    for (int i = 0; i < 5; i++) {
-	        System.out.println("Digite a Palavra Passe:");
-	        String palavra = entrada.nextLine();
-
-	        if (palavra.contentEquals("Java-2022")) {
+		String palavra = "";
+		int i = 0;
+		 
+		do {
+			i++;
+			System.out.println("Digite a Palavra Passe: (Tentativa " + i + "/5):");
+	        palavra = entrada.nextLine();
+	        
+	        if (palavra.equals("Java-2022")) {
 	            System.out.println("Palavra OK");
-	            break;
-	        } else 
-	            System.out.println("Palavra Errada! Tente de novo");
-   
+	        } else {
+	        	 System.out.println("Palavra Errada!");
+	        } 
+		} while (!palavra.equals("Java-2022")&& i < 5);
+		
+		
 	    entrada.close();
-	    }
-	}
-}	
+	 }
+}
+

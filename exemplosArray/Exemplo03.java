@@ -10,7 +10,7 @@ public class Exemplo03 {
 		ArrayList <String> lista = new ArrayList<String>();
 		
 		int selecionado = 0;
-		Object [] opcoes = {"Incluir", "Listar", "Apagar", "Finalizar"};
+		Object [] opcoes = {"Incluir", "Listar", "Apagar", "Editar", "Finalizar"};
 		
 		do {
 			selecionado = JOptionPane.showOptionDialog(null, "O que voce deseja?", "Exemplo", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
@@ -28,7 +28,7 @@ public class Exemplo03 {
 			}
 			JOptionPane.showConfirmDialog(null, msg);
 		}
-		
+				
 		if (selecionado == 2) {
 			Object [] opcaoApagar = new Object[lista.size()];
 			for (int i = 0; i < opcaoApagar.length; i++) {
@@ -43,6 +43,25 @@ public class Exemplo03 {
 			}
 		}
 		
-	} while (selecionado != 3);
+		if (selecionado == 3) {
+			Object [] altera = new Object[lista.size()];
+			
+			for (int i = 0; i < altera.length; i++) {
+				altera[i] = lista.get(i);
+			}
+		
+			
+			Object ItemSelecionado = JOptionPane.showInputDialog(null, "Selecione o item para alterado:",
+					"Alterar", JOptionPane.INFORMATION_MESSAGE, null, altera, altera[0]);
+			
+			String item = JOptionPane.showInputDialog("Digite");
+			for (int i = 0; i < altera.length; i++) {
+				if(ItemSelecionado.equals(lista.get(i)))
+					lista.set(i, item);
+			}
+			
+ 		}
+		
+	} while (selecionado != 4);
 }
 }

@@ -13,12 +13,15 @@ public class Exemplo03 {
 		Object [] opcoes = {"Incluir", "Listar", "Apagar", "Editar", "Finalizar"};
 		
 		do {
+			try {
 			selecionado = JOptionPane.showOptionDialog(null, "O que voce deseja?", "Exemplo", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
 				null, opcoes, opcoes[0]);
 		
 		if (selecionado == 0) {
 			String item = JOptionPane.showInputDialog("Digite");
-			lista.add(item);
+			if(item != null) {
+				lista.add(item);
+			}		
 		}
 		
 		if (selecionado == 1) {
@@ -29,7 +32,7 @@ public class Exemplo03 {
 			JOptionPane.showConfirmDialog(null, msg);
 		}
 				
-		if (selecionado == 2) {
+		if (selecionado == 2 && lista.size() > 0) {
 			Object [] opcaoApagar = new Object[lista.size()];
 			for (int i = 0; i < opcaoApagar.length; i++) {
 				opcaoApagar[i] = lista.get(i);
@@ -61,7 +64,11 @@ public class Exemplo03 {
 			}
 			
  		}
-		
+			}
+			
+		catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "Erro Inesperado");
+		}
 	} while (selecionado != 4);
 }
 }
